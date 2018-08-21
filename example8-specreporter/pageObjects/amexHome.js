@@ -1,5 +1,8 @@
 var AMEXHOME = function (isNonAngularFlag) {
-var heroHeader = element(by.css('.news-header'));
+var welcomeMessage = element(by.id('welcome_title'));
+var loginControl = element(by.id('Login1_UserName'));
+var passwordControl= element(by.id('Login1_Password'));
+var loginButton = element(by.id('Login1_LoginButton'));  
 
     browser.ignoreSynchronization = isNonAngularFlag;
 
@@ -8,8 +11,22 @@ var heroHeader = element(by.css('.news-header'));
         browser.get(url);
     }
 
-    this.getHeroHeader = function (cb) {
-        cb(heroHeader.getText());
+    this.getWelcomeMessage = function (cb) {
+        cb(welcomeMessage.getText());
+    }
+
+    this.enterUserName = function(userName) {
+        loginControl.sendKeys(userName);
+    }
+
+    this.enterPassword = function(password) {
+        passwordControl.sendKeys(password);
+    }
+
+    this.login = function(cb) {
+        loginButton.click();
+        browser.sleep(3000);
+        cb();
     }
 
 };

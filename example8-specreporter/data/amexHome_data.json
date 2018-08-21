@@ -1,6 +1,4 @@
 {
-    "url":"http://www.americanexpress.com",
-    "isNonAngular":true,
-    "title":"American Express India | Log in | Credit Cards, Travel & Rewards",
-    "country":"India"
+    "url":"https://stg-app.beanstalkdata.com/login.aspx?ReturnUrl=%2fdefault.aspx",
+    "isNonAngular":true
 }
